@@ -26,12 +26,20 @@ steps:
     version: '2.2.203'
    
 
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
+#- task: NuGetCommand@2
+#  displayName: 'NuGet restore'
+#  inputs:
+#    restoreSolution: '$(Parameters.solution)'
+#    feedsToUse: config
+#    nugetConfigPath: $(NugetConfig)
+
+- task: DotNetCoreCLI@2
   inputs:
-    restoreSolution: '$(Parameters.solution)'
+    command: restore
+    projects: '**/*.csproj'
     feedsToUse: config
-    nugetConfigPath: $(NugetConfig)
+    nugetConfigPath: $(NugetConfig)    # Relative to root of the repository
+   # externalFeedCredentials: <Name of the NuGet service connection>
 
 #- task: DotNetCoreCLI@2
 #  displayName: 'dotnet restore $(NugetConfig)'
