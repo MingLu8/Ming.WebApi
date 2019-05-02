@@ -14,7 +14,8 @@ variables:
   buildConfiguration: 'Debug'
   nugetConfig: 'nuget.config' 
   vstsFeedName: 'ming-develop'  
- 
+
+
 steps:
 #- task: NuGetToolInstaller@0
 #  displayName: 'Use NuGet 4.9.3'
@@ -40,14 +41,14 @@ steps:
   displayName: 'dotnet test'
   inputs:
     command: test
-    arguments: '--no-restore --no-build  --configuration $(BuildConfiguration)'
+    arguments: '--no-restore --no-build --configuration $(BuildConfiguration)'
     projects: '**/*.Tests.csproj'
     
 - task: DotNetCoreCLI@2
   displayName: 'dotnet pack'
   inputs:
     command: pack
-    arguments: '--no-restore --no-build  --configuration $(BuildConfiguration)'
+    arguments: '--no-restore --no-build'
     packagesToPack: '**/*.csproj;!**/*.Tests.csproj'
 
 - task: DotNetCoreCLI@2
