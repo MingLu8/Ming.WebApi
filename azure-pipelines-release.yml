@@ -17,19 +17,28 @@ variables:
   
 
 steps:
-#- task: NuGetToolInstaller@0
-#  displayName: 'Use NuGet 4.9.3'
-#  inputs:
-#    versionSpec: '4.9.3'
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.9.3'
+  inputs:
+    versionSpec: '4.9.3'
 - task: DotNetCoreInstaller@0
   inputs:
     version: '2.2.203'
-    
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet restore $(NugetConfig)'
+   
+
+steps:
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
   inputs:
-    command: restore
-    arguments: '--configfile $(NugetConfig)'
+    restoreSolution: '$(Parameters.solution)'
+    feedsToUse: config
+    nugetConfigPath: $(NugetConfig)
+
+#- task: DotNetCoreCLI@2
+#  displayName: 'dotnet restore $(NugetConfig)'
+#  inputs:
+#    command: restore
+#    arguments: '--configfile $(NugetConfig)'
     
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
