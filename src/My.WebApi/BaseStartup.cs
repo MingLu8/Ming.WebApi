@@ -7,22 +7,23 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
 using System.Reflection;
-using Microsoft.Extensions.Hosting;
 using My.CorrelationIdProvider;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using  Microsoft.AspNetCore.Hosting;
 
 namespace My.WebApi
 {
-    public abstract class BaseStartup
+    public class BaseStartup
     {
-        protected abstract Info ApiInfo { get; }
+        protected virtual Info ApiInfo { get; }
 
         public virtual IConfiguration Configuration { get; }
 
         protected BaseStartup(IConfiguration configuration, IHostingEnvironment env = null)
         {
             Configuration = configuration;
-            ApiVersion.Version = configuration["ApiInfo:Version"] ?? "v1";
+            ApiInfo = configuration.GetSettings<Info>("ApiInfo");
+            ApiInfo.Title = ApiInfo.Title ?? env?.ApplicationName;
+            ApiVersion.Version = ApiInfo.Version;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
