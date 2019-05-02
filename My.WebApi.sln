@@ -1,0 +1,52 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My.WebApi", "src\My.WebApi\My.WebApi.csproj", "{C1574549-3279-433F-B3DE-0913849A3BFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5710FF89-195D-4E81-B105-9BFBB98CC9D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My.WebApi.Tests", "src\My.WebApi.Tests\My.WebApi.Tests.csproj", "{277BC1B6-951D-4883-BB08-28A802A5C50B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{765CDB03-09AB-4131-A5BF-7A41D9F1DF32}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines-release.yml = azure-pipelines-release.yml
+		azure-pipelines.yml = azure-pipelines.yml
+		nuget-release.config = nuget-release.config
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.WebApi.WebTest", "src\My.WebApi.WebTest\My.WebApi.WebTest.csproj", "{C318107D-C032-4F89-919A-B6E68403BA5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1574549-3279-433F-B3DE-0913849A3BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1574549-3279-433F-B3DE-0913849A3BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1574549-3279-433F-B3DE-0913849A3BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1574549-3279-433F-B3DE-0913849A3BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277BC1B6-951D-4883-BB08-28A802A5C50B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277BC1B6-951D-4883-BB08-28A802A5C50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277BC1B6-951D-4883-BB08-28A802A5C50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277BC1B6-951D-4883-BB08-28A802A5C50B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C318107D-C032-4F89-919A-B6E68403BA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C318107D-C032-4F89-919A-B6E68403BA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C318107D-C032-4F89-919A-B6E68403BA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C318107D-C032-4F89-919A-B6E68403BA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1574549-3279-433F-B3DE-0913849A3BFC} = {5710FF89-195D-4E81-B105-9BFBB98CC9D6}
+		{277BC1B6-951D-4883-BB08-28A802A5C50B} = {5710FF89-195D-4E81-B105-9BFBB98CC9D6}
+		{C318107D-C032-4F89-919A-B6E68403BA5F} = {5710FF89-195D-4E81-B105-9BFBB98CC9D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AA803A2-778A-4300-8202-9BEA443B184D}
+	EndGlobalSection
+EndGlobal
