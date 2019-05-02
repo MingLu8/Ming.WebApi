@@ -21,15 +21,33 @@ steps:
 #  displayName: 'Use NuGet 4.9.3'
 #  inputs:
 #    versionSpec: '4.9.3'
+
 - task: DotNetCoreInstaller@0
   inputs:
     version: '2.2.203'
-    
+   
+
+#- task: NuGetCommand@2
+#  displayName: 'NuGet restore'
+#  inputs:
+#    restoreSolution: '$(Parameters.solution)'
+#    feedsToUse: config
+#    nugetConfigPath: $(NugetConfig)
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore $(NugetConfig)'
   inputs:
     command: restore
-    arguments: '--configfile $(NugetConfig)'
+    #projects: '**/*.csproj'
+    feedsToUse: config
+    nugetConfigPath: $(NugetConfig)    # Relative to root of the repository
+   # externalFeedCredentials: <Name of the NuGet service connection>
+
+#- task: DotNetCoreCLI@2
+#  displayName: 'dotnet restore $(NugetConfig)'
+#  inputs:
+#    command: restore
+#    arguments: '--configfile $(NugetConfig)'
     
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
