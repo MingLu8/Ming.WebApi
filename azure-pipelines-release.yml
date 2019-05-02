@@ -34,9 +34,10 @@ steps:
 #    nugetConfigPath: $(NugetConfig)
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet restore $(NugetConfig)'
   inputs:
     command: restore
-    projects: '**/*.csproj'
+    #projects: '**/*.csproj'
     feedsToUse: config
     nugetConfigPath: $(NugetConfig)    # Relative to root of the repository
    # externalFeedCredentials: <Name of the NuGet service connection>
