@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public static class ConfigurationExtensions
     {

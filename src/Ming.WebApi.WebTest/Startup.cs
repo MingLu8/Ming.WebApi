@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace My.WebApi.WebTest
+namespace Ming.WebApi.WebTest
 {
     public class Startup : BaseStartup
     {

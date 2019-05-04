@@ -7,10 +7,10 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
 using System.Reflection;
-using My.CorrelationIdProvider;
+using Ming.CorrelationIdProvider;
 using  Microsoft.AspNetCore.Hosting;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public class BaseStartup
     {
@@ -22,7 +22,7 @@ namespace My.WebApi
         {
             Configuration = configuration;
             ApiInfo = configuration.GetSettings<Info>("ApiInfo");
-            ApiInfo.Title = ApiInfo.Title ?? env?.ApplicationName;
+            ApiInfo.Title = ApiInfo?.Title ?? env?.ApplicationName;
             ApiVersion.Version = ApiInfo.Version;
         }
 

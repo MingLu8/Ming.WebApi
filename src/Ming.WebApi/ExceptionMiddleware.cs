@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Logging;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public class ExceptionMiddleware
     {

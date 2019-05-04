@@ -1,9 +1,9 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using My.CorrelationIdProvider;
+using Ming.CorrelationIdProvider;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public class CorrelationIdProvider : ICorrelationIdProvider
     {

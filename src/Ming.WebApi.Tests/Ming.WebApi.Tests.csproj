@@ -12,7 +12,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
-    <PackageReference Include="My.Abstractions" Version="1.0.0" />
     <PackageReference Include="NSubstitute" Version="4.0.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
@@ -22,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\My.WebApi\My.WebApi.csproj" />
+    <ProjectReference Include="..\Ming.WebApi\Ming.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

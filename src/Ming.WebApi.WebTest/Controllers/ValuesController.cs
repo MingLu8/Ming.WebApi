@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace My.WebApi.WebTest.Controllers
+namespace Ming.WebApi.WebTest.Controllers
 {
     [VersionedRoute("api/[version]/[controller]")]
     [ApiController]

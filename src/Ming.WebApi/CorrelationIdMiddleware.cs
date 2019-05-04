@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using My.CorrelationIdProvider;
+using Ming.CorrelationIdProvider;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public class CorrelationIdMiddleware
     {

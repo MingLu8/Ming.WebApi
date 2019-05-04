@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>My.WebApi.WebTest</name>
+        <name>Ming.WebApi.WebTest</name>
     </assembly>
     <members>
     </members>

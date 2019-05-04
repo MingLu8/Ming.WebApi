@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     /// <summary>
     /// Specifies an attribute route on a controller where [version] will be replace by version number defined in ApiVersion.Version.

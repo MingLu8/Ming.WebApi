@@ -1,4 +1,4 @@
-﻿namespace My.WebApi
+﻿namespace Ming.WebApi
 {
     public class ApiVersion
     {

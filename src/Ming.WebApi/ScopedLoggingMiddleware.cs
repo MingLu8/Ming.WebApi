@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using My.CorrelationIdProvider;
+using Ming.CorrelationIdProvider;
 
-namespace My.WebApi
+namespace Ming.WebApi
 {
     public class ScopedLoggingMiddleware
     {

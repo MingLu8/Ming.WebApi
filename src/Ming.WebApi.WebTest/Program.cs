@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace My.WebApi.WebTest
+namespace Ming.WebApi.WebTest
 {
     public class Program
     {
@@ -53,16 +53,8 @@ namespace My.WebApi.WebTest
                     {
                         options.IncludeScopes = Convert.ToBoolean(hostContext.Configuration["Logging:IncludeScopes"]);
                     });
-                   // configLogging.AddApplicationInsights(hostContext.Configuration["Logging:ApplicationInsights:Instrumentationkey"]);
 
-                    // Optional: Apply filters to configure LogLevel Trace or above is sent to
-                    // ApplicationInsights for all categories.
-                   // configLogging.AddFilter<ApplicationInsightsLoggerProvider>("", LogLevel.Trace);
-
-                    // Additional filtering For category starting in "Microsoft",
-                    // only Warning or above will be sent to Application Insights.
-                   // configLogging.AddFilter<ApplicationInsightsLoggerProvider>("Microsoft", LogLevel.Warning);
-
+                    //configLogging.AddApplicationInsights(hostContext.Configuration["Logging:ApplicationInsights:Instrumentationkey"]);
                 })
                 .UseStartup<Startup>();
     }
