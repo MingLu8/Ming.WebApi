@@ -21,9 +21,16 @@ namespace Ming.WebApi
         protected BaseStartup(IConfiguration configuration, IHostingEnvironment env = null)
         {
             Configuration = configuration;
-            ApiInfo = configuration.GetSettings<Info>("ApiInfo");
-            ApiInfo.Title = ApiInfo?.Title ?? env?.ApplicationName;
+            ApiInfo = CreateApiInfo(configuration, env);
             ApiVersion.Version = ApiInfo.Version;
+        }
+
+        protected virtual Info CreateApiInfo(IConfiguration configuration, IHostingEnvironment env)
+        {
+            var info = configuration.GetSettings<Info>("ApiInfo") ?? new Info();
+            info.Title = ApiInfo.Title ?? env?.ApplicationName;
+            info.Version = ApiInfo.Version ?? ApiVersion.Version;
+            return info;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
