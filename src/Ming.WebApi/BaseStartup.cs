@@ -28,8 +28,8 @@ namespace Ming.WebApi
         protected virtual Info CreateApiInfo(IConfiguration configuration, IHostingEnvironment env)
         {
             var info = configuration.GetSettings<Info>("ApiInfo") ?? new Info();
-            info.Title = ApiInfo.Title ?? env?.ApplicationName;
-            info.Version = ApiInfo.Version ?? ApiVersion.Version;
+            info.Title = info.Title ?? env?.ApplicationName;
+            info.Version = info.Version ?? ApiVersion.Version;
             return info;
         }
 

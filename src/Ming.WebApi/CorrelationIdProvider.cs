@@ -7,10 +7,13 @@ namespace Ming.WebApi
 {
     public class CorrelationIdProvider : ICorrelationIdProvider
     {
+        public const string CorrelationIdConfigKey = "CorrelationId";
+        public const string DefaultCorrelationIdHeaderKey = "X-Correlation-Id";
+
         private IConfiguration Configuration { get; }
         private IHttpContextAccessor HttpContextAccessor { get; }
         private IHeaderDictionary Headers => HttpContextAccessor.HttpContext.Request.Headers;
-        public string CorrelationIdKey => Configuration["CorrelationId"] ?? "X-Correlation-Id";
+        public string CorrelationIdKey => Configuration[CorrelationIdConfigKey] ?? DefaultCorrelationIdHeaderKey;
 
         public CorrelationIdProvider(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
