@@ -22,7 +22,7 @@ namespace Ming.WebApi.WebTest.Controllers
 
         // GET api/values
         [HttpGet("/withCorrelationIdHeader")]
-        public ActionResult<string> WithCorrelationId([FromHeader(Name = CorrelationIdProvider.DefaultCorrelationIdHeaderKey)] string correlationId)
+        public ActionResult<string> WithCorrelationId([FromHeader(Name = CorrelationProvider.DefaultCorrelationIdHeaderKey)] string correlationId)
         {
             return $"correlationId:{_correlationIdProvider.GetCorrelationId()}";
         }
